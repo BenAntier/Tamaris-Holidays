@@ -119,3 +119,7 @@ body {
 .col-xs-6 button{
 	padding: 0;
 }
+
+.vertical-spacer {
+	height: 100px;
+}
