@@ -1,0 +1,121 @@
+body {
+	background-color: #FFEBB9;
+}
+
+#wrapper {
+	background-image: url("pics/chillin_3.jpg");
+	height: 610px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-top: -20px;
+	padding-top: 100px;
+	text-align: center;
+}
+
+#wrapper h1{
+	font-family: "Indie Flower";
+	font-size: 60px;
+	color: #FFEBB9;
+	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+#wrapper h2{
+	font-family: "Indie Flower";
+	font-size: 20px;
+	color: #FFEBB9;
+	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.container {
+	margin-top: 20px;
+}
+
+#footer {
+	background-color: black;
+}
+
+.col-xs-6{
+	padding-left: 25px;
+	padding-right: 25px;
+	font-family: "Indie Flower";
+}
+
+.col-xs-6 a{
+	color: #FFEBB9;
+}
+
+.col-xs-6 img{
+	background-color: transparent;
+}
+
+.btn-primary{
+	background-color: rgba(0, 0, 0, 0.7);
+	border-color: #FFEBB9;
+}
+
+.btn-primary:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-color: white;
+}
+
+.col-xs-6 a:hover {
+	color:white;
+}
+
+.navbar-transparent {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.navbar-transparent .navbar-brand,
+.navbar-transparent .navbar-nav > li > a {
+  color: white;
+  font-family: "Indie Flower";
+  font-size: 20px;
+}
+
+.navbar-transparent .navbar-brand:hover,
+.navbar-transparent .navbar-brand:active,
+.navbar-transparent .navbar-brand:focus,
+.navbar-transparent .navbar-nav > li > a:hover,
+.navbar-transparent .navbar-nav > li > a:active,
+.navbar-transparent .navbar-nav > li > a:focus,
+.navbar-transparent .navbar-nav > .open > a,
+.navbar-transparent .navbar-nav > .open > a:hover,
+.navbar-transparent .navbar-nav > .open > a:focus {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+ }
+
+ .col-xs-8 img{
+ 	margin: 1em;
+
+ }
+
+.col-xs-8 img:hover{
+	transform: scale(1.2);
+  	-webkit-transform: scale(1.2);
+}
+
+#footer p{
+	font-family: "Indie Flower";
+	color: white;
+	font-size: 20px;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+#footer a{
+	font-family: "Indie Flower";
+	color: white;
+	font-size: 20px;
+	margin-top: 1em;
+}
+
+.paragraph{
+	text-align: center;
+	height: 200px;
+}
+
+.col-xs-6 button{
+	padding: 0;
+}
