@@ -14,6 +14,7 @@
     <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="style.css">
 
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- Leave those next 4 lines if you care about users using IE8 -->
     <!--[if lt IE 9]>
@@ -58,14 +59,16 @@
 
     <div>
       <script type="text/javascript">
-      var start = document.getElementById('start').value;
+        var start = document.getElementById('start').value;
       </script>
-      <b>Start: </b>
-      <select id="start">
-      <option value="Paris, France">Paris</option>
-      <option value="Brussels, Belgium">Brussels</option>
+        <b>Start: </b>
+        <select id="start">
+        <option value="Paris, France" placeholder="Origin">Paris</option>
+        <option value="Brussels, Belgium" placeholder="Origin">Brussels</option>
     </select>
-      <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=Paris&destination=4%20Chemin%20des%20Tamaris%2C%20Martigues%2C%20France&key=AIzaSyAr2qBdm6aGv25G75YDdgCyvuXNhaQSrP8"></iframe>
+    </script>
+      <iframe width="600" height="450" frameborder="0" style="border:0" id="iframe1" src="https://www.google.com/maps/embed/v1/directions?origin=%Paris%22&destination=4%20Chemin%20des%20Tamaris%2C%20Martigues%2C%20France&key=AIzaSyAr2qBdm6aGv25G75YDdgCyvuXNhaQSrP8"> </iframe>
+
     </div>
     
     <div id="footer">
