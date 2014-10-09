@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Tamaris - Holidays by the Sea - France Mediterranean</title>
+    <title> Directions to the Tamaris House - Sausset les Pins</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
@@ -13,7 +13,51 @@
     <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script>
+      var directionsDisplay;
+      var directionsService = new google.maps.DirectionsService();
+      var map;
 
+      function initialize() {
+        directionsDisplay = new google.maps.DirectionsRenderer();
+        var sausset = new google.maps.LatLng(43.3319905,5.0973529);
+        var home = new google.maps.LatLng(43.3291837,5.082528)
+        var mapOptions = {
+          zoom:14,
+          center: sausset
+        };
+        map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+        directionsDisplay.setMap(map);
+          var marker = new google.maps.Marker({
+          position: home,
+          map: map,
+          title:"That's the house!"
+        });
+      }
+
+      function calcRoute() {
+        var start = document.getElementById('start').value;
+        var end = document.getElementById('end').value;
+        var request = {
+            origin:start,
+            destination:end,
+            travelMode: google.maps.TravelMode.DRIVING
+        };
+        directionsService.route(request, function(response, status) {
+          if (status == google.maps.DirectionsStatus.OK) {
+            directionsDisplay.setDirections(response);
+            directionsDisplay.setMap(map);
+            directionsDisplay.setPanel(document.getElementById("map_directions"))
+          }
+        });
+      }
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- Leave those next 4 lines if you care about users using IE8 -->
@@ -57,19 +101,19 @@
     
     <div class="vertical-spacer"></div>
 
-    <div>
-      <script type="text/javascript">
-        var start = document.getElementById('start').value;
-      </script>
-        <b>Start: </b>
-        <select id="start">
-        <option value="Paris, France" placeholder="Origin">Paris</option>
-        <option value="Brussels, Belgium" placeholder="Origin">Brussels</option>
-    </select>
-    </script>
-      <iframe width="600" height="450" frameborder="0" style="border:0" id="iframe1" src="https://www.google.com/maps/embed/v1/directions?origin=%Paris%22&destination=4%20Chemin%20des%20Tamaris%2C%20Martigues%2C%20France&key=AIzaSyAr2qBdm6aGv25G75YDdgCyvuXNhaQSrP8"> </iframe>
-
+    <div id="panel">
+            <div class="from">
+                <label class="address">From: </label><input id="start" name="from" value="" class="textbox txtMapDirections" type="text">
+            </div>
+            <br>
+            <div class="to">
+                    <label class="address">To:  &nbsp;  &nbsp; &nbsp; </label><input id="end" name="to" value="4 Chemin des Tamaris, Martigues" class="textbox txtMapDirections" type="text">
+            </div>
+                    <br>
+                    <input name="submit" value="Get Directions" onclick="calcRoute(); return false" class="button button_directions" type="submit">
     </div>
+    <div id="map-canvas"></div>
+    <div id="map_directions"></div>
     
     <div id="footer">
       <div class="container">
