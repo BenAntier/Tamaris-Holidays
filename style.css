@@ -130,3 +130,21 @@ body {
 .vertical-spacer p{
 		font-family: "Indie Flower";
 }
+
+#map-canvas {
+        height: 500px;
+        width: 500px;
+        margin: 0px;
+        padding: 0px
+}
+
+#panel {
+        position: absolute;
+        top: 5px;
+        left: 5%;
+        margin-left: 100px;
+        z-index: 5;
+        background-color: blue;
+        padding: 5px;
+        border: 1px solid #999;
+      }
